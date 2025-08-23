@@ -1,0 +1,154 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+}
+ /* General styles */
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Container holding the 3D carousel */
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+  background-color: transparent !important;
+}
+
+/* The rotating carousel itself */
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate360 30s linear infinite;
+  transform-origin: center center;
+  background-color: transparent !important;
+}
+
+/* Each carousel face */
+.carousel__face {
+  position: absolute;
+  width: 150px;
+  height: 250px;
+  left: 50%;
+  top: 56px; /* centers vertically in 300px container */
+  transform-origin: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.mlp-70{
+  margin-left: 70%;
+}
+
+/* Rotate each face and push it out in 3D space */
+.carousel__face:nth-child(1) {
+  background-image: url("/movie1.png");
+  transform: translateX(-50%) rotateY(0deg) translateZ(300px);
+}
+.carousel__face:nth-child(2) {
+  background-image: url("/movie2.png");
+  transform: translateX(-50%) rotateY(40deg) translateZ(300px);
+}
+.carousel__face:nth-child(3) {
+  background-image: url("/movie3.png");
+  transform: translateX(-50%) rotateY(80deg) translateZ(300px);
+}
+.carousel__face:nth-child(4) {
+  background-image: url("/movie4.png");
+  transform: translateX(-50%) rotateY(120deg) translateZ(300px);
+}
+.carousel__face:nth-child(5) {
+  background-image: url("/movie5.png");
+  transform: translateX(-50%) rotateY(160deg) translateZ(300px);
+}
+.carousel__face:nth-child(6) {
+  background-image: url("/movie6.png");
+  transform: translateX(-50%) rotateY(200deg) translateZ(300px);
+}
+.carousel__face:nth-child(7) {
+  background-image: url("/movie7.png");
+  transform: translateX(-50%) rotateY(240deg) translateZ(300px);
+}
+.carousel__face:nth-child(8) {
+  background-image: url("/movie8.png");
+  transform: translateX(-50%) rotateY(280deg) translateZ(300px);
+}
+.carousel__face:nth-child(9) {
+  background-image: url("/movie5.png");
+  transform: translateX(-50%) rotateY(320deg) translateZ(300px);
+}
+
+/* Rotation animation */
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+/* Pause animation on hover */
+.container:hover .carousel {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 220px;
+    height: 220px;
+    margin-top: 60px;
+  }
+
+  .carousel__face {
+    width: 100px;
+    height: 160px;
+    top: 30px;
+    font-size: 0.8rem;
+  }
+
+  .carousel__face:nth-child(1) {
+    transform: translateX(-50%) rotateY(0deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(2) {
+    transform: translateX(-50%) rotateY(40deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(3) {
+    transform: translateX(-50%) rotateY(80deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(4) {
+    transform: translateX(-50%) rotateY(120deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(5) {
+    transform: translateX(-50%) rotateY(160deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(6) {
+    transform: translateX(-50%) rotateY(200deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(7) {
+    transform: translateX(-50%) rotateY(240deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(8) {
+    transform: translateX(-50%) rotateY(280deg) translateZ(200px);
+  }
+  .carousel__face:nth-child(9) {
+    transform: translateX(-50%) rotateY(320deg) translateZ(200px);
+  }
+}

@@ -1,0 +1,33 @@
+@import "tailwindcss";
+.stroke::before {
+  content: "EAT. DRINK. PLAY";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  color: black;
+  -webkit-text-stroke: 1px #95C11E;
+  z-index: -1;
+}
+.white-outline {
+  text-shadow:
+    1px 1px 0 #fff,
+   -1px 1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px -1px 0 #fff;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
